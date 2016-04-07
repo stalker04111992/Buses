@@ -22,20 +22,8 @@ public class EditBus extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        try{
-            ArrayList<Bus> buses = busDao.findAll();
-            request.setAttribute("buses", buses);
-        }
-        catch (SQLException exception){
-            request.setAttribute("error", "Ошибка подключения к базе данных");
-            exception.printStackTrace();
-        }
-        catch (NamingException exception){
-            request.setAttribute("error", "Ошибка запроса к базе данных");
-            exception.printStackTrace();
-        }
-        finally{
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
-        }
+
+        request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+
     }
 }

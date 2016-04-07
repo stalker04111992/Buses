@@ -12,10 +12,6 @@ body {
 }
 
 
-.container .bus input[type = submit]{
-	float: right;
-	margin-bottom: 10px;
-}
 
 #footer
 {
@@ -142,12 +138,6 @@ form, fieldset, table {
 	text-align: left;
 }
 
-input[type = text],input[type = submit],input[type = email],textarea {
-font-family: Tahoma, Arial, Times;
-font-size:1em;
-margin:0;
-padding:4px;
-}
 
 label {
 	margin: 2px;

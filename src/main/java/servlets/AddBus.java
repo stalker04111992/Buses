@@ -28,7 +28,6 @@ public class AddBus extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         addBus(request, response);
-
     }
 
     private void addBus(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
@@ -43,6 +42,7 @@ public class AddBus extends HttpServlet{
                 List result = busDao.findByRegNumber(regNumber);
                 if(result.isEmpty()){
                     busDao.saveBus(bus);
+                    request.setAttribute("error", "Автобус в базу добавлен успешно");
                 }
                 else{
                     request.setAttribute("error", "Регистрационный номер уже существует");
