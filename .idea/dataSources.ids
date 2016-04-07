@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQL Server (Microsoft) - BusDepot@127.0.0.1" uuid="75471321-c812-43b0-b505-cd84ea6c8d41">
+    <database-info product="Microsoft SQL Server" version="11.00.3128" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+      <extra-name-characters>$#@</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <database-model serializer="dbm" rdbms="MSSQL" format-version="2.5">
+      <database id="1" name="BusDepot">
+        <object-id>7</object-id>
+        <collation>Cyrillic_General_CI_AS</collation>
+      </database>
+      <schema id="2" parent="1" name="dbo">
+        <object-id>1</object-id>
+        <introspection-timestamp>2016-04-06.15:02:04.187</introspection-timestamp>
+      </schema>
+      <table id="3" parent="2" name="bus">
+        <object-id>1570104634</object-id>
+        <created-timestamp>2016-03-25.10:06:35.633</created-timestamp>
+        <modified-timestamp>2016-03-25.10:06:36.367</modified-timestamp>
+      </table>
+      <table id="4" parent="2" name="personnel">
+        <object-id>1330103779</object-id>
+        <created-timestamp>2016-03-25.01:28:25.543</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:25.543</modified-timestamp>
+      </table>
+      <table id="5" parent="2" name="roles">
+        <object-id>1362103893</object-id>
+        <created-timestamp>2016-03-25.01:28:25.557</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:26</modified-timestamp>
+      </table>
+      <table id="6" parent="2" name="sysdiagrams">
+        <object-id>805577908</object-id>
+        <created-timestamp>2016-03-19.17:59:02.173</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.173</modified-timestamp>
+      </table>
+      <table id="7" parent="2" name="users">
+        <object-id>1394104007</object-id>
+        <created-timestamp>2016-03-25.01:28:25.590</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:26.013</modified-timestamp>
+      </table>
+      <routine id="8" parent="2" name="findByMark">
+        <object-id>190623722</object-id>
+        <created-timestamp>2016-03-29.02:36:26.080</created-timestamp>
+        <modified-timestamp>2016-03-29.02:36:26.080</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="9" parent="2" name="findByRegNumber">
+        <object-id>206623779</object-id>
+        <created-timestamp>2016-03-29.09:07:48.040</created-timestamp>
+        <modified-timestamp>2016-03-29.09:07:48.040</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="10" parent="2" name="fn_diagramobjects">
+        <object-id>949578421</object-id>
+        <created-timestamp>2016-03-19.17:59:02.827</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.827</modified-timestamp>
+        <routine-kind>FUNCTION</routine-kind>
+        <type>SCALAR_FUN</type>
+      </routine>
+      <routine id="11" parent="2" name="getAllBuses">
+        <object-id>430624577</object-id>
+        <created-timestamp>2016-03-30.16:51:57.243</created-timestamp>
+        <modified-timestamp>2016-03-30.16:51:57.243</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="12" parent="2" name="getAllMarks">
+        <object-id>1634104862</object-id>
+        <created-timestamp>2016-03-28.18:25:37.680</created-timestamp>
+        <modified-timestamp>2016-03-28.18:25:37.680</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="13" parent="2" name="saveBus">
+        <object-id>222623836</object-id>
+        <created-timestamp>2016-03-29.18:03:51.510</created-timestamp>
+        <modified-timestamp>2016-03-29.18:03:51.510</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="14" parent="2" name="sp_alterdiagram">
+        <object-id>917578307</object-id>
+        <created-timestamp>2016-03-19.17:59:02.633</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.633</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="15" parent="2" name="sp_creatediagram">
+        <object-id>885578193</object-id>
+        <created-timestamp>2016-03-19.17:59:02.470</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.470</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="16" parent="2" name="sp_dropdiagram">
+        <object-id>933578364</object-id>
+        <created-timestamp>2016-03-19.17:59:02.720</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.720</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="17" parent="2" name="sp_helpdiagramdefinition">
+        <object-id>869578136</object-id>
+        <created-timestamp>2016-03-19.17:59:02.443</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.443</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="18" parent="2" name="sp_helpdiagrams">
+        <object-id>853578079</object-id>
+        <created-timestamp>2016-03-19.17:59:02.263</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.263</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="19" parent="2" name="sp_renamediagram">
+        <object-id>901578250</object-id>
+        <created-timestamp>2016-03-19.17:59:02.577</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.577</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="20" parent="2" name="sp_upgraddiagrams">
+        <object-id>789577851</object-id>
+        <created-timestamp>2016-03-19.17:59:02.070</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.070</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <column id="21" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1(3014)</sequence-identity>
+      </column>
+      <column id="22" parent="3" name="regNumber">
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="23" parent="3" name="mark">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="24" parent="3" name="model">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="25" parent="3" name="state">
+        <mandatory>1</mandatory>
+        <data-type>bit</data-type>
+      </column>
+      <column id="26" parent="3" name="description">
+        <data-type>varchar(64)</data-type>
+      </column>
+      <index id="27" parent="3" name="PK__bus__3213E83F053BCE7E">
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <index id="28" parent="3" name="UK_gr40o3d43sgg1pb3cgccb9n6r">
+        <columns>regNumber</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <position>2</position>
+      </index>
+      <key id="29" parent="3" name="PK__bus__3213E83F053BCE7E">
+        <object-id>1586104691</object-id>
+        <created-timestamp>2016-03-25.10:06:36.343</created-timestamp>
+        <modified-timestamp>2016-03-25.10:06:36.343</modified-timestamp>
+        <columns>id</columns>
+        <underlying-index>PK__bus__3213E83F053BCE7E</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="30" parent="3" name="UK_gr40o3d43sgg1pb3cgccb9n6r">
+        <object-id>1602104748</object-id>
+        <created-timestamp>2016-03-25.10:06:36.363</created-timestamp>
+        <modified-timestamp>2016-03-25.10:06:36.363</modified-timestamp>
+        <columns>regNumber</columns>
+        <underlying-index>UK_gr40o3d43sgg1pb3cgccb9n6r</underlying-index>
+      </key>
+      <column id="31" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="32" parent="4" name="address">
+        <mandatory>1</mandatory>
+        <data-type>varchar(512)</data-type>
+      </column>
+      <column id="33" parent="4" name="birthDate">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="34" parent="4" name="email">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="35" parent="4" name="enabled">
+        <mandatory>1</mandatory>
+        <data-type>bit</data-type>
+      </column>
+      <column id="36" parent="4" name="firstName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="37" parent="4" name="lastName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="38" parent="4" name="patronymic">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="39" parent="4" name="telephone">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <index id="40" parent="4" name="PK__personne__3213E83F42D278B7">
+        <name-surrogate>1</name-surrogate>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <key id="41" parent="4" name="PK__personne__3213E83F42D278B7">
+        <name-surrogate>1</name-surrogate>
+        <object-id>1346103836</object-id>
+        <created-timestamp>2016-03-25.01:28:25.543</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:25.543</modified-timestamp>
+        <columns>id</columns>
+        <underlying-index>PK__personne__3213E83F42D278B7</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="42" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="43" parent="5" name="role">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="44" parent="5" name="userID">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <index id="45" parent="5" name="PK__roles__3213E83F5180FD7B">
+        <name-surrogate>1</name-surrogate>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <key id="46" parent="5" name="PK__roles__3213E83F5180FD7B">
+        <name-surrogate>1</name-surrogate>
+        <object-id>1378103950</object-id>
+        <created-timestamp>2016-03-25.01:28:25.570</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:25.570</modified-timestamp>
+        <columns>id</columns>
+        <underlying-index>PK__roles__3213E83F5180FD7B</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="47" parent="5" name="FK_fxr4th2gffwo05r1v0pe0xjdk">
+        <object-id>1458104235</object-id>
+        <created-timestamp>2016-03-25.01:28:26</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:26</modified-timestamp>
+        <columns>userID</columns>
+        <ref-key>~.users.PK__users__3213E83F195585C4</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="48" parent="6" name="name">
+        <mandatory>1</mandatory>
+        <data-type>sysname</data-type>
+      </column>
+      <column id="49" parent="6" name="principal_id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="50" parent="6" name="diagram_id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="51" parent="6" name="version">
+        <data-type>int</data-type>
+      </column>
+      <column id="52" parent="6" name="definition">
+        <data-type>varbinary</data-type>
+      </column>
+      <index id="53" parent="6" name="PK__sysdiagr__C2B05B61FF7DC9A2">
+        <name-surrogate>1</name-surrogate>
+        <columns>diagram_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <index id="54" parent="6" name="UK_principal_name">
+        <columns>principal_id
+name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <position>2</position>
+      </index>
+      <key id="55" parent="6" name="PK__sysdiagr__C2B05B61FF7DC9A2">
+        <name-surrogate>1</name-surrogate>
+        <object-id>821577965</object-id>
+        <created-timestamp>2016-03-19.17:59:02.233</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.233</modified-timestamp>
+        <columns>diagram_id</columns>
+        <underlying-index>PK__sysdiagr__C2B05B61FF7DC9A2</underlying-index>
+        <primary>1</primary>
+      </key>
+      <key id="56" parent="6" name="UK_principal_name">
+        <object-id>837578022</object-id>
+        <created-timestamp>2016-03-19.17:59:02.250</created-timestamp>
+        <modified-timestamp>2016-03-19.17:59:02.250</modified-timestamp>
+        <columns>principal_id
+name</columns>
+        <underlying-index>UK_principal_name</underlying-index>
+      </key>
+      <column id="57" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="58" parent="7" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="59" parent="7" name="enabled">
+        <mandatory>1</mandatory>
+        <data-type>bit</data-type>
+      </column>
+      <column id="60" parent="7" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="61" parent="7" name="tabNumber">
+        <data-type>int</data-type>
+      </column>
+      <column id="62" parent="7" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="63" parent="7" name="PK__users__3213E83F195585C4">
+        <name-surrogate>1</name-surrogate>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <key id="64" parent="7" name="PK__users__3213E83F195585C4">
+        <name-surrogate>1</name-surrogate>
+        <object-id>1410104064</object-id>
+        <created-timestamp>2016-03-25.01:28:25.600</created-timestamp>
+        <modified-timestamp>2016-03-25.01:28:25.600</modified-timestamp>
+        <columns>id</columns>
+        <underlying-index>PK__users__3213E83F195585C4</underlying-index>
+        <primary>1</primary>
+      </key>
+      <argument id="65" parent="8" name="@mark">
+        <direction>IN</direction>
+        <data-type>varchar(30)</data-type>
+      </argument>
+      <argument id="66" parent="9" name="@regNumber">
+        <direction>IN</direction>
+        <data-type>varchar(10)</data-type>
+      </argument>
+      <argument id="67" parent="10">
+        <direction>RETURN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="68" parent="13" name="@regNumber">
+        <direction>IN</direction>
+        <data-type>varchar(10)</data-type>
+      </argument>
+      <argument id="69" parent="13" name="@mark">
+        <direction>IN</direction>
+        <data-type>varchar(30)</data-type>
+      </argument>
+      <argument id="70" parent="13" name="@model">
+        <direction>IN</direction>
+        <data-type>varchar(20)</data-type>
+      </argument>
+      <argument id="71" parent="13" name="@state">
+        <direction>IN</direction>
+        <data-type>bit</data-type>
+      </argument>
+      <argument id="72" parent="13" name="@description">
+        <direction>IN</direction>
+        <data-type>varchar(64)</data-type>
+      </argument>
+      <argument id="73" parent="14" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="74" parent="14" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="75" parent="14" name="@version">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="76" parent="14" name="@definition">
+        <direction>IN</direction>
+        <data-type>varbinary</data-type>
+      </argument>
+      <argument id="77" parent="15" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="78" parent="15" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="79" parent="15" name="@version">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="80" parent="15" name="@definition">
+        <direction>IN</direction>
+        <data-type>varbinary</data-type>
+      </argument>
+      <argument id="81" parent="16" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="82" parent="16" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="83" parent="17" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="84" parent="17" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="85" parent="18" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="86" parent="18" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="87" parent="19" name="@diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+      <argument id="88" parent="19" name="@owner_id">
+        <direction>IN</direction>
+        <data-type>int</data-type>
+      </argument>
+      <argument id="89" parent="19" name="@new_diagramname">
+        <direction>IN</direction>
+        <data-type>sysname</data-type>
+      </argument>
+    </database-model>
+  </data-source>
+</component>
