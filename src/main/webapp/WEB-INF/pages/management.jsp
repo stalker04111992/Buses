@@ -19,7 +19,7 @@
             <li><a href="management/addbus">Добавить автобус</a></li>
             <li><a href="management/editbus">Редактировать данные об автобусах</a></li>
             <li><a href="management/viewbuses">Просмотр списка автобусов</a></li>
-            <li>Удаление автобуса</li>
+            <li><a href="management/deletebus">Удаление автобуса</a></li>
         </ul>
 
     </div>

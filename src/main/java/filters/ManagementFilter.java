@@ -4,8 +4,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
-@WebFilter(value = "/management/addbus")
-public class AddBusFilter implements Filter {
+@WebFilter(value = {"/management/editbus", "/management/addbus", "/management/deletebus"})
+public class ManagementFilter implements Filter {
 
     public void init(FilterConfig filterConfig) throws ServletException {
 

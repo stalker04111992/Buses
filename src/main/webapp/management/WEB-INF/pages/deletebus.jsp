@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>Удаление автобуса</title>
+    <link href="css/MainStyle.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="wrapper">
@@ -20,14 +22,14 @@
             <h1>Удалить данные об автобусе</h1>
             <div class = "error">${error}</div>
 
-            <form method="post" action="editbus">
+            <form method="post" action="deletebus">
                 <input type="hidden" name = "action" value="select">
                 <select name = "busIndex">
                     <c:forEach var="bus" items="${buses}">
                         <option value="${buses.indexOf(bus)}">${bus.getId()}  Рег. номер: ${bus.getRegNumber()} Автобус: ${bus.getMark()}   ${bus.getModel()}</option>
                     </c:forEach>
                 </select>
-                <input type="submit" value="Изменить данные">
+                <input type="submit" value="Удалить данные данные">
                 <div class="stop"/>
             </form>
         </div>
