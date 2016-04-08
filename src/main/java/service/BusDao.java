@@ -64,4 +64,14 @@ public class BusDao {
             throw new SQLException();
         }
     }
+
+    public void delete(int index)throws SQLException{
+        Query query = em.createNativeQuery("{call deleteBus(?)}",
+                Bus.class)
+                .setParameter(1, index);
+        int result = query.executeUpdate();
+        if (result == 0){
+            throw new SQLException();
+        }
+    }
 }

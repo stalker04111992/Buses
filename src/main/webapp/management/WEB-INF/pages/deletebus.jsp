@@ -26,7 +26,7 @@
                 <input type="hidden" name = "action" value="select">
                 <select name = "busIndex">
                     <c:forEach var="bus" items="${buses}">
-                        <option value="${buses.indexOf(bus)}">${bus.getId()}  Рег. номер: ${bus.getRegNumber()} Автобус: ${bus.getMark()}   ${bus.getModel()}</option>
+                        <option value="${bus.getId()}">${bus.getId()}  Рег. номер: ${bus.getRegNumber()} Автобус: ${bus.getMark()}   ${bus.getModel()}</option>
                     </c:forEach>
                 </select>
                 <input type="submit" value="Удалить данные данные">

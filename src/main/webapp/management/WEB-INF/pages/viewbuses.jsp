@@ -28,7 +28,6 @@
         <th>Модель</th>
         <th>На ходу</th>
         <th>Описание</th>
-        <th>Действие</th>
     </tr>
     <c:forEach var="bus" items="${buses}">
         <tr>
@@ -38,16 +37,6 @@
             <td>${bus.getModel()}</td>
             <td>${bus.isState()}</td>
             <td>${bus.getDescription()}</td>
-            <td>
-                <form method="post" action="update">
-                    <input type="hidden" value="${bus.getId()}">
-                    <input type="submit" value="Изменить">
-                </form>
-                <form method="post" action="delete">
-                    <input type="hidden" value="${bus.getId()}">
-                    <input type="submit" value="Удалить">
-                </form>
-            </td>
         </tr>
     </c:forEach>
 </table>
