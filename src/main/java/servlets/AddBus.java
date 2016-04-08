@@ -35,7 +35,7 @@ public class AddBus extends HttpServlet{
             String mark = request.getParameter("mark");
             String model = request.getParameter("model");
             String regNumber = request.getParameter("regNumber");
-            boolean state = new Boolean(request.getParameter("state"));
+            boolean state = Boolean.valueOf(request.getParameter("state"));
             String description = request.getParameter("description");
             if (BusRegexMatches.busMatches(regNumber, mark, model, description)){
                 Bus bus = new Bus(regNumber, mark, model, state, description);
