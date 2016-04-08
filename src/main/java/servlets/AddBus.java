@@ -42,7 +42,7 @@ public class AddBus extends HttpServlet{
                 List result = busDao.findByRegNumber(regNumber);
                 if(result.isEmpty()){
                     busDao.saveBus(bus);
-                    request.setAttribute("error", "Автобус в базу добавлен успешно");
+                    response.sendRedirect("addbus");
                 }
                 else{
                     request.setAttribute("error", "Регистрационный номер уже существует");

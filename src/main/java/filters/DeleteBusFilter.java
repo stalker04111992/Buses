@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebFilter(value = "/management/editbus")
-public class EditBusFilter implements Filter {
+@WebFilter(value = "/management/deletebus")
+public class DeleteBusFilter implements Filter {
     @EJB
     BusDao busDao;
     private ArrayList<Bus> buses;
@@ -28,16 +28,14 @@ public class EditBusFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    private void getBusInformation(ServletRequest request){
-        try{
+    private void getBusInformation(ServletRequest request) {
+        try {
             buses = busDao.findAll();
             request.setAttribute("buses", buses);
-        }
-        catch (SQLException exception){
+        } catch (SQLException exception) {
             request.setAttribute("error", "Ошибка подключения к базе данных");
             exception.printStackTrace();
-        }
-        catch (NamingException exception){
+        } catch (NamingException exception) {
             request.setAttribute("error", "Ошибка запроса к базе данных");
             exception.printStackTrace();
         }
