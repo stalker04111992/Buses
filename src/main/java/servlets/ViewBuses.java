@@ -38,7 +38,8 @@ public class ViewBuses extends HttpServlet {
             if (param != null) {
                 List<Bus> buses = null;
                 if (param.equals("all")) {
-                    buses = busDao.findAll();
+                    buses = (List<Bus>)request.getAttribute("buses");
+                    request.setAttribute("selectedBuses", buses);
                 }
                 if (param.equals("marks")) {
                     String mark = request.getParameter("mark");

@@ -6,6 +6,36 @@ body {
 	padding: 0;
 }
 
+#managementPersonnel{
+	margin: 50px 10px 0 0;
+	float: right;
+}
+
+
+#managementPersonnel ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementPersonnel ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementPersonnel ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementPersonnel ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
 
 #managementBuses{
 	margin: 50px 0 0 10px;

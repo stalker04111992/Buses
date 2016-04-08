@@ -1,54 +1,10 @@
-/* NULL */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-margin:0;
-padding:0;
-border:0;
-outline:0;
-font-weight:inherit;
-font-style:inherit;
-font-size:100%;
-font-family:inherit;
-vertical-align:baseline;
-background:transparent;
-}
-/*Do not forget to describe the styles for:focus!*/
-:focus {
-outline:0;
-}
-body {
-line-height:1;
-}
 ol, ul {
 list-style:none;
 }
-/*For tables still need to write 'cellspacing="0"' in code*/
+
 table {
 border-collapse:collapse;
 border-spacing:0;
-}
-caption, th, td {
-text-align:left;
-font-weight:normal;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-content:"";
-}
-blockquote, q {
-quotes:"" "";
-}
-/*End NULL*/
-
-body {
- font-family:Tahoma, Verdana, Arial, 'Sans Serif';
- margin:20px;
 }
 
 .simple-little-table {
@@ -57,7 +13,7 @@ body {
 	font-size:12px;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
-	margin:120px auto 0 auto;
+	margin:50px auto 0 auto;
 	border:#ccc 1px solid;
 	border-collapse:separate;
 
@@ -70,26 +26,35 @@ body {
 	box-shadow: 0 1px 2px #d1d1d1;
 }
 
-.address
-{
-	text-align: center;
-	width: 300px;
-}
-
 .simple-little-table th {
 	font-weight:bold;
-	padding:21px 25px 22px 25px;
+	padding:5px;
 	border-top:1px solid #fafafa;
 	border-bottom:1px solid #e0e0e0;
-
+	width: 30px;
+	text-align: center;
 	background: #ededed;
 	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
 	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
 }
-.simple-little-table th:first-child{
+
+.simple-little-table td {
+	font-weight:bold;
+	padding:5px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+	width: 30px;
 	text-align: left;
-	padding-left:20px;
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
 }
+
+.mark{
+	width: 80px;
+}
+
+
 .simple-little-table tr:first-child th:first-child{
 	-moz-border-radius-topleft:3px;
 	-webkit-border-top-left-radius:3px;
@@ -102,15 +67,14 @@ body {
 }
 .simple-little-table tr{
 	text-align: center;
-	padding-left:20px;
 }
 .simple-little-table tr td:first-child{
-	text-align: left;
-	padding-left:20px;
+	text-align: center;
+	padding: 5px;
 	border-left: 0;
 }
 .simple-little-table tr td {
-	padding:18px;
+	padding: 5px;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid #e0e0e0;
 	border-left: 1px solid #e0e0e0;

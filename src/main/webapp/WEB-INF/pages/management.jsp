@@ -21,7 +21,15 @@
             <li><a href="management/viewbuses">Просмотр списка автобусов</a></li>
             <li><a href="management/deletebus">Удаление автобуса</a></li>
         </ul>
+    </div>
 
+    <div id="managementPersonnel">
+        <ul>
+            <li><a href="management/addpersonnel">Добавить сотрудника</a></li>
+            <li><a href="management/editpersonnel">Редактировать данные о сотрудниках</a></li>
+            <li><a href="management/viewpersonnels">Просмотр списка сотрудников</a></li>
+            <li><a href="management/deletepersonnels">Удаление сотрудника</a></li>
+        </ul>
     </div>
 
     <div id="footer">

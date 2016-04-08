@@ -32,7 +32,7 @@ public class EditBus extends HttpServlet {
             if(action.equals("select")){
                 int index = new Integer(request.getParameter("busIndex"));
                 List<Bus> buses = (List<Bus>) request.getAttribute("buses");
-                request.setAttribute("bus", buses.get(index));
+                request.setAttribute("selectedBus", buses.get(index));
             }
             if (action.equals("edit")){
                 int number = new Integer(request.getParameter("number"));

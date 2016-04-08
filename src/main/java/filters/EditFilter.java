@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebFilter(value = {"/management/editbus", "/management/deletebus"})
+@WebFilter(value = {"/management/editbus", "/management/deletebus", "/management/viewbuses"})
 public class EditFilter implements Filter {
     @EJB
     BusDao busDao;
@@ -22,8 +22,6 @@ public class EditFilter implements Filter {
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         getBusInformation(request);
         chain.doFilter(request, response);
     }
