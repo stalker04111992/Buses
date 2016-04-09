@@ -1,6 +1,8 @@
 package service;
 
+import entities.Bus;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,5 +34,23 @@ public class BusRegexMatches {
 
     public static boolean busMatches(String regNumber, String mark, String model, String description){
         return  (regNumberMatches(regNumber) & markMatches(mark) & modelMatches(model) & descriptionMatches(description));
+    }
+
+    public static Bus getBus(HttpServletRequest request){
+        Integer number = new Integer(request.getParameter("number"));
+        String mark = request.getParameter("mark");
+        String model = request.getParameter("model");
+        String regNumber = request.getParameter("regNumber");
+        boolean state = Boolean.valueOf(request.getParameter("state"));
+        String description = request.getParameter("description");
+        if (BusRegexMatches.busMatches(regNumber, mark, model, description)) {
+            if (number != null){
+                return new Bus(number, regNumber, mark, model, state, description);
+            }
+            else{
+                return new Bus(regNumber, mark, model, state, description);
+            }
+        }
+        return null;
     }
 }

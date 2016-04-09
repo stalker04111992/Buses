@@ -48,10 +48,10 @@ public class ViewBuses extends HttpServlet {
                     }
                 }
                 if (param.equals("numbers")) {
-                    String regNumber = request.getParameter("number");
+                    /*String regNumber = request.getParameter("number");
                     if(BusRegexMatches.regNumberMatches(regNumber)){
                         buses = busDao.findByRegNumber(regNumber);
-                    }
+                    }*/
                 }
                 request.setAttribute("buses", buses);
             }

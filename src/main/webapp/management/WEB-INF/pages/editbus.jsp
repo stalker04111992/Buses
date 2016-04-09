@@ -18,20 +18,20 @@
         </div>
     </div>
 
+    <c:if test="${numbers != null}">
     <section class="container">
         <div class="bus">
             <h1>Изменить данные об автобусе</h1>
             <div class = "error">${error}</div>
 
-            <form method="post" action="editbus">
-                <input type="hidden" name = "action" value="select">
-                <select name = "busIndex">
-                    <c:forEach var="bus" items="${buses}">
-                        <c:if test="${bus.equals(selectedBus)}">
-                            <option selected value="${buses.indexOf(bus)}">${bus.getId()}  Рег. номер: ${bus.getRegNumber()} Автобус: ${bus.getMark()}   ${bus.getModel()}</option>
+            <form method="get" action="updatebus">
+                <select name = "number">
+                    <c:forEach var="busNumber" items="${numbers}">
+                        <c:if test="${selectedBus != null && busNumber == selectedBus.getId()}">
+                            <option selected value="${busNumber}">Номер автобуса: ${busNumber}</option>
                         </c:if>
-                        <c:if test="${!bus.equals(selectedBus)}">
-                            <option value="${buses.indexOf(bus)}">${bus.getId()}  Рег. номер: ${bus.getRegNumber()} Автобус: ${bus.getMark()}   ${bus.getModel()}</option>
+                        <c:if test="${(selectedBus != null && busNumber != selectedBus.getId()) || selectedBus == null}">
+                            <option value="${busNumber}">Номер автобуса: ${busNumber}</option>
                         </c:if>
                     </c:forEach>
                 </select>
@@ -40,6 +40,7 @@
             </form>
         </div>
     </section>
+    </c:if>
 
     <c:if test="${selectedBus != null}">
         <section class="container">
@@ -48,8 +49,7 @@
 
                 <div class = "error">${error}</div>
 
-                <form method="post" action="editbus">
-                    <input type="hidden" name = "action" value="edit">
+                <form method="post" action="updatebus">
                     <input type="hidden" name = "number" value="${selectedBus.getId()}">
                     <input type="text" name = "mark" placeholder="Марка автобуса" value="${selectedBus.getMark()}" required pattern="^[A-Za-zА-Яа-яЁё0-9\-\ ]{1,30}$">
                     <input type="text" name = "model" placeholder="Модель автобуса" value="${selectedBus.getModel()}" required pattern="^[A-Za-zА-Яа-яЁё0-9\-\ ]{1,20}$">

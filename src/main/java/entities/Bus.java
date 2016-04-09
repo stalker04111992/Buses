@@ -53,14 +53,9 @@ public class Bus {
     public boolean equals(Object object){
         if (object instanceof Bus){
             Bus bus = (Bus) object;
-            if(bus.getId() == this.id & bus.getRegNumber().equals(this.regNumber)
+            return bus.getId() == this.id & bus.getRegNumber().equals(this.regNumber)
                     & bus.getMark().equals(this.mark) & bus.getModel().equals(this.model)
-                    & bus.isState() == this.state){
-                return true;
-            }
-            else {
-                return false;
-            }
+                    & bus.isState() == this.state;
         }
         else{
             return false;

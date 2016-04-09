@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 @Stateless
 public class BusDao {
@@ -38,16 +37,28 @@ public class BusDao {
         return new ArrayList<Bus>(query.getResultList());
     }
 
-    public ArrayList<Bus> findByRegNumber (String regNumber) throws SQLException, NamingException{
+    public Bus findByNumber (int number) throws SQLException, NamingException{
+        Query query = em.createNativeQuery("{call findByNumber(?)}",
+                Bus.class)
+                .setParameter(1, number);
+        return new ArrayList<Bus>(query.getResultList()).get(0);
+    }
+    public Bus findByRegNumber (String regNumber) throws SQLException, NamingException{
         Query query = em.createNativeQuery("{call findByRegNumber(?)}",
                 Bus.class)
                 .setParameter(1, regNumber);
-        return new ArrayList<Bus>(query.getResultList());
+        return new ArrayList<Bus>(query.getResultList()).get(0);
     }
 
     public ArrayList<Bus> findAll()throws SQLException, NamingException {
         Query query = em.createNativeQuery("{call getAllBuses()}", Bus.class);
         return new ArrayList<Bus>(query.getResultList());
+    }
+
+    public ArrayList<Integer> getNumbers(){
+        Query query = em.createNativeQuery("{call getAllNumbers()}");
+
+        return new ArrayList<Integer>(query.getResultList());
     }
 
     public void updateBus(Bus bus)throws SQLException{
