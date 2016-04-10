@@ -130,45 +130,47 @@ text-shadow: none;
     <section class="container">
         <div class="bus">
             <h1>Просмотр списка автобусов</h1>
+            <%--@elvariable id="error" type="antlr"--%>
             <c:if test="${error != null}">
                 <div class = "error">${error}</div>
             </c:if>
             <form method="get" action="searchbuses">
-                <input id = "searchLine" type="text" name = "line" value="">
+                <input id = "searchLine" type="text" name = "line" value="" title="">
+                <%--@elvariable id="search" type="char"--%>
                 <c:if test="${search != null}">
                     <c:if test="${search == 0}">
-                        <p><input type="radio" onclick="Show()" checked name = "search" value="0">Поиск по номеру</p>
+                        <p><input type="radio" onclick="Show()" checked name = "search" value="0" title="">Поиск по номеру</p>
                     </c:if>
                     <c:if test="${search != 0}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="0">Поиск по номеру</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="0" title="">Поиск по номеру</p>
                     </c:if>
                     <c:if test="${search == 1}">
-                        <p><input type="radio" onclick="Show()" checked name = "search" value="1">Поиск по регистрационному номеру</p>
+                        <p><input type="radio" onclick="Show()" checked name = "search" value="1" title="">Поиск по регистрационному номеру</p>
                     </c:if>
                     <c:if test="${search != 1}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="1">Поиск по регистрационному номеру</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по регистрационному номеру</p>
                     </c:if>
                     <c:if test="${search == 2}">
-                        <p><input type="radio" onclick="Show()" checked name = "search" value="2">Поиск по марке</p>
+                        <p><input type="radio" onclick="Show()" checked name = "search" value="2" title="">Поиск по марке</p>
                     </c:if>
                     <c:if test="${search != 2}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="2">Поиск по марке</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="2" title="">Поиск по марке</p>
                     </c:if>
                     <c:if test="${search == 3}">
-                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3">Все автобусы</p>
+                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3" title="">Все автобусы</p>
                     </c:if>
                     <c:if test="${search != 3}">
-                        <p><input type="radio" onclick="Hidden()" name = "search" value="3">Все автобусы</p>
+                        <p><input type="radio" onclick="Hidden()" name = "search" value="3" title="">Все автобусы</p>
                     </c:if>
                 </c:if>
                 <c:if test="${search == null}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="0">Поиск по номеру</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="0" title="">Поиск по номеру</p>
 
-                        <p><input type="radio" onclick="Show()" name = "search" value="1">Поиск по регистрационному номеру</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по регистрационному номеру</p>
 
-                        <p><input type="radio" onclick="Show()" name = "search" value="2">Поиск по марке</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="2" title="">Поиск по марке</p>
 
-                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3">Все автобусы</p>
+                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3" title="">Все автобусы</p>
                 </c:if>
                 <input type="submit" value="Поиск">
                 <div class="stopForm"></div>
@@ -177,6 +179,7 @@ text-shadow: none;
     </section>
 
 <form action="update" method="post">
+<%--@elvariable id="buses" type="antlr"--%>
 <c:if test="${buses != null || buses.size() == 0}">
     <table class="table_blur">
         <tr>
