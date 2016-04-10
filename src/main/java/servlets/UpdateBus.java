@@ -3,7 +3,6 @@ package servlets;
 import entities.Bus;
 import service.BusDao;
 import service.BusRegexMatches;
-
 import javax.ejb.EJB;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;

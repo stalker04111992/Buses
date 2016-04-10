@@ -34,11 +34,10 @@ public class AddBus extends HttpServlet{
         }
         catch (SQLException exception){
             request.setAttribute("error", "Произошла ошибка при работе с базой данных");
+            request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
         }
         catch (NullPointerException exception){
             request.setAttribute("error", "Ошибка формата вводимых данных");
-        }
-        finally {
             request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
         }
     }
