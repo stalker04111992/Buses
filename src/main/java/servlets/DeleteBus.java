@@ -16,27 +16,26 @@ public class DeleteBus extends HttpServlet{
     BusDao busDao;
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/pages/deletebus.jsp").forward(request, response);
-    }
-
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         try{
-            int index = new Integer(request.getParameter("busIndex"));
+            int index = new Integer(request.getParameter("number"));
             busDao.delete(index);
-            response.sendRedirect("deletebus");
+            response.sendRedirect("../management");
         }
         catch(SQLException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Произошла ошибка при работе с базой данных");
+            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
         }
         catch (NullPointerException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Произошла ошибка при отправке данных");
+            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
         }
-        finally {
-            request.getRequestDispatcher("WEB-INF/pages/deletebus.jsp").forward(request, response);
+        catch (NumberFormatException exception){
+            exception.printStackTrace();
+            request.setAttribute("error", "Ошибка формата данных");
+            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
         }
     }
 }

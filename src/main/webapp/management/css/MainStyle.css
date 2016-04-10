@@ -2,13 +2,115 @@ ol, ul {
     list-style: none;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+form{
+    margin: 0;
+    padding: 0;
+}
+
+.stopForm{
+    clear: both;
+    margin: 0;
 }
 
 body {
-    font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #3a3a3a;
+    font: 76% Verdana,Tahoma,Arial,sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+}
+
+#footer
+{
+    background: linear-gradient(to bottom, white, darkgrey);
+    height: 31px;
+    width: 800px;
+    bottom: 0;
+    position: fixed;
+}
+
+#menu {
+    width: 700px;
+    height: 30px;
+    float: left;
+}
+
+#menu ul {
+    padding: 0 15px;
+    margin: 0;
+    height: 20px;
+}
+
+#menu li {
+    display: inline;
+    padding: 0;
+}
+
+#menu a {
+    color: darkslategray;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 3px;
+}
+
+#menu a:hover {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+#menu a.active {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+
+
+#menubar
+{
+    background: linear-gradient(to bottom, darkgrey, white);
+    width: 800px;
+    height: 35px;
+}
+
+#wrapper {
+    color: #303030;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+    width: 800px;
+    min-height: 100%;
+}
+
+
+#footer p {
+    margin: 0;
+    padding-top: 5px;
+    text-align: center;
+}
+
+#footer a {
+    color: darkgreen;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+a {
+    background:inherit;
+    color:#166090;
+    text-decoration:none;
+    font-weight:700;
+}
+
+a:hover {
+    background:inherit;
+    color:#286ea0;
+    text-decoration:underline;
 }
 
 .container {
@@ -20,7 +122,7 @@ body {
 .bus {
     position: relative;
     margin: 0 auto 0 auto;
-    padding: 20px 20px 20px;
+    padding: 10px;
     width: 455px;
     background: white;
     border-radius: 3px;
@@ -55,8 +157,8 @@ body {
 
 
 input [type = radio]{
-    width: 20px;
     padding: 8px 0 0 0;
+    margin: 0;
 }
 
 .bus div.submit
@@ -67,37 +169,6 @@ input [type = radio]{
 }
 
 .bus .submit2
-{
-    float: right;
-}
-
-.com
-{
-    margin: 10px 0;
-}
-
-.com input
-{
-    margin: 5px 0;
-}
-
-.com input[type=radio]
-{
-    float: left;
-    padding: 0 0 0 10px;
-}
-
-.TypePhone, .TypeEmail
-{
-    margin: 5px 0 0 5px;
-}
-
-.buttonLeft
-{
-    float: left;
-}
-
-.buttonRight
 {
     float: right;
 }
@@ -115,6 +186,7 @@ input [type = radio]{
 .Stop
 {
     width: 450px;
+    height: 20px;
     clear: both;
     margin: 10px 0;
 }
@@ -122,7 +194,8 @@ input [type = radio]{
 
 .container .bus input[type = submit]{
     float: right;
-    margin: 10px 0;
+    width: 150px;
+    margin: 10px 0 0 0;
 }
 
 input[type=text], input[type=password], input[type=email], .bus select, .bus textarea{

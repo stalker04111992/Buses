@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<script>
+
+    $(document).ready(function(){
+        if($("#wrapper").height() < $(window).height()){
+            $("#wrapper").height($(window).height());
+        }
+    });
+</script>
+
 <div id="wrapper">
     <div id="menubar">
         <div id="menu">
@@ -17,30 +26,6 @@
             </ul>
         </div>
     </div>
-
-    <c:if test="${numbers != null}">
-    <section class="container">
-        <div class="bus">
-            <h1>Изменить данные об автобусе</h1>
-            <div class = "error">${error}</div>
-
-            <form method="get" action="updatebus">
-                <select name = "number">
-                    <c:forEach var="busNumber" items="${numbers}">
-                        <c:if test="${selectedBus != null && busNumber == selectedBus.getId()}">
-                            <option selected value="${busNumber}">Номер автобуса: ${busNumber}</option>
-                        </c:if>
-                        <c:if test="${(selectedBus != null && busNumber != selectedBus.getId()) || selectedBus == null}">
-                            <option value="${busNumber}">Номер автобуса: ${busNumber}</option>
-                        </c:if>
-                    </c:forEach>
-                </select>
-                <input type="submit" value="Изменить данные">
-                <div class="stop"/>
-            </form>
-        </div>
-    </section>
-    </c:if>
 
     <c:if test="${selectedBus != null}">
         <section class="container">
@@ -64,8 +49,17 @@
                     </c:if>
                     <textarea type="text" name = "description" placeholder="Описание" pattern="^[A-Za-zА-Яа-яЁё0-9\-(),. ]{0,64}$">${selectedBus.getDescription()}</textarea>
                     <input type="submit" value="Сохранить изменения">
-                    <div class="stop"/>
                 </form>
+
+                <div class="stopForm"></div>
+
+                <form action="deletebus" method="post">
+                    <input type="hidden" name = "number" value="${selectedBus.getId()}">
+                    <input type="submit" value="Удалить автобус">
+                </form>
+
+                <div class="stopForm"></div>
+
             </div>
 
         </section>

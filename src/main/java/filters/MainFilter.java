@@ -7,9 +7,7 @@ import java.io.IOException;
 @WebFilter(urlPatterns = "/*")
 public class MainFilter implements Filter {
 
-    public void init(FilterConfig filterConfig) throws ServletException {
-
-    }
+    public void init(FilterConfig filterConfig) throws ServletException {}
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
@@ -17,7 +15,5 @@ public class MainFilter implements Filter {
         chain.doFilter(request, response);
     }
 
-    public void destroy() {
-
-    }
+    public void destroy() {}
 }

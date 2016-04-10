@@ -37,19 +37,24 @@ public class BusDao {
         return new ArrayList<Bus>(query.getResultList());
     }
 
-    public Bus findByNumber (int number) throws SQLException, NamingException{
+    public ArrayList<Bus> findByNumber (int number) throws SQLException, NamingException{
         Query query = em.createNativeQuery("{call findByNumber(?)}",
                 Bus.class)
                 .setParameter(1, number);
-        return new ArrayList<Bus>(query.getResultList()).get(0);
+        return new ArrayList<Bus>(query.getResultList());
     }
-    public Bus findByRegNumber (String regNumber) throws SQLException, NamingException{
+    public ArrayList<Bus> findByRegNumber (String regNumber) throws SQLException, NamingException{
         Query query = em.createNativeQuery("{call findByRegNumber(?)}",
                 Bus.class)
                 .setParameter(1, regNumber);
-        return new ArrayList<Bus>(query.getResultList()).get(0);
+        return new ArrayList<Bus>(query.getResultList());
     }
-
+    public ArrayList<Bus> findByModel (String model) throws SQLException, NamingException{
+        Query query = em.createNativeQuery("{call findByRegNumber(?)}",
+                Bus.class)
+                .setParameter(1, model);
+        return new ArrayList<Bus>(query.getResultList());
+    }
     public ArrayList<Bus> findAll()throws SQLException, NamingException {
         Query query = em.createNativeQuery("{call getAllBuses()}", Bus.class);
         return new ArrayList<Bus>(query.getResultList());
