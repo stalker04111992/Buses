@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BusRegexMatches {
+public class PersonnelRegexMatches {
 
     public static boolean regNumberMatches(String regNumber){
         Pattern patternRegNumber = Pattern.compile("^[A-Za-z0-9-]{5,10}$");
@@ -43,7 +43,7 @@ public class BusRegexMatches {
         String regNumber = request.getParameter("regNumber");
         boolean state = Boolean.valueOf(request.getParameter("state"));
         String description = request.getParameter("description");
-        if (BusRegexMatches.busMatches(regNumber, mark, model, description)) {
+        if (PersonnelRegexMatches.busMatches(regNumber, mark, model, description)) {
             if (number != null){
                 return new Bus(number, regNumber, mark, model, state, description);
             }

@@ -22,7 +22,7 @@ public class Bus {
     @Column(name = "state", nullable = false)
     private boolean state;
 
-    @Column(name = "description", length = 64)
+    @Column(name = "description", length = 64, nullable = false)
     private String description;
 
     public Bus(){}

@@ -1,8 +1,8 @@
-package servlets;
+package servlets.buses;
 
 import entities.Bus;
-import service.BusDao;
-import service.BusRegexMatches;
+import service.buses.BusDao;
+import service.buses.BusRegexMatches;
 
 import javax.ejb.EJB;
 import javax.naming.NamingException;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(value = "/management/searchbuses")
+@WebServlet(value = "/management/buses/searchbuses")
 public class SearchBuses extends HttpServlet {
 
     @EJB
@@ -24,7 +24,7 @@ public class SearchBuses extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         search(request);
-        request.getRequestDispatcher("WEB-INF/pages/viewbuses.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/viewvacancies.jsp").forward(request, response);
     }
 
     private void search(HttpServletRequest request){

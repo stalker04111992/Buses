@@ -1,8 +1,12 @@
-package servlets;
+package servlets.vacancies;
 
 import entities.Bus;
-import service.BusDao;
-import service.BusRegexMatches;
+import entities.Vacancy;
+import service.buses.BusDao;
+import service.buses.BusRegexMatches;
+import service.vacancies.VacancyDao;
+import service.vacancies.VacancyRegexMatches;
+
 import javax.ejb.EJB;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -13,52 +17,52 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(value = "/management/updatebus")
-public class UpdateBus extends HttpServlet {
+@WebServlet(value = "/management/vacancies/updatevacancy")
+public class UpdateVacancy extends HttpServlet {
     @EJB
-    BusDao busDao;
+    VacancyDao vacancyDao;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         try{
             int number = new Integer(request.getParameter("selected"));
-            Bus bus = busDao.findByNumber(number).get(0);
-            request.setAttribute("selectedBus", bus);
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            Vacancy vacancy = vacancyDao.findByNumber(number).get(0);
+            request.setAttribute("selectedVacancy", vacancy);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
         catch (SQLException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Ошибка подключения к базе данных");
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
         catch (NamingException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Ошибка запроса к базе данных");
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
         catch (NullPointerException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Ошибка. Данные не найдены");
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         try{
-            Bus bus = BusRegexMatches.getBus(request);
-            busDao.updateBus(bus);
-            response.sendRedirect("../management");
+            Vacancy vacancy = VacancyRegexMatches.getVacancy(request);
+            vacancyDao.updateVacancy(vacancy);
+            response.sendRedirect("../../management");
         }
         catch (NullPointerException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Ошибка. Нет параметров");
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
         catch(SQLException exception){
             exception.printStackTrace();
             request.setAttribute("error", "Произошла ошибка при работе с базой данных");
-            request.getRequestDispatcher("WEB-INF/pages/editbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/editvacancy.jsp").forward(request, response);
         }
     }
 }

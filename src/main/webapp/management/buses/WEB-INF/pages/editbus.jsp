@@ -21,8 +21,8 @@
     <div id="menubar">
         <div id="menu">
             <ul>
-                <li><a href="../index"><span>Главная</span></a></li>
-                <li><a href="../management"><span>Управление</span></a></li>
+                <li><a href="../../index"><span>Главная</span></a></li>
+                <li><a href="../../management"><span>Управление</span></a></li>
             </ul>
         </div>
     </div>

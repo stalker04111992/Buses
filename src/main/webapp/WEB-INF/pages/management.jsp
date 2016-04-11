@@ -16,8 +16,8 @@
 
     <div id="managementBuses">
         <ul>
-            <li><a href="management/addbus">Добавить автобус</a></li>
-            <li><a href="management/viewbuses">Работа с данными об автобусах</a></li>
+            <li><a href="management/buses/addbus">Добавить автобус</a></li>
+            <li><a href="management/buses/viewbuses">Работа с данными об автобусах</a></li>
         </ul>
     </div>
 
@@ -25,6 +25,13 @@
         <ul>
             <li><a href="management/addpersonnel">Добавить сотрудника</a></li>
             <li><a href="management/viewpersonnels">Просмотр списка сотрудников</a></li>
+        </ul>
+    </div>
+
+    <div id="managementVacancies">
+        <ul>
+            <li><a href="management/vacancies/addvacancy">Добавить вакансию</a></li>
+            <li><a href="management/vacancies/viewvacancies">Просмотр списка вакансий</a></li>
         </ul>
     </div>
 

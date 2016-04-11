@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Автобусы</title>
+    <title>Вакансии</title>
     <link href="css/MainStyle.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 </head>
@@ -91,19 +91,13 @@ text-shadow: none;
             case 0:
             {
                 $("#searchLine").attr("required");
-                $("#searchLine").attr("placeholder", "Номер автобуса (Целое число)");
+                $("#searchLine").attr("placeholder", "Номер вакансии (Целое число)");
                 break;
             }
             case 1:
             {
                 $("#searchLine").attr("required");
-                $("#searchLine").attr("placeholder", "Регистрационный номер (5-10 латинских символов или цифр)");
-                break;
-            }
-            case 2:
-            {
-                $("#searchLine").attr("required");
-                $("#searchLine").attr("placeholder", "Марка(1-30 символов)");
+                $("#searchLine").attr("placeholder", "Количество вакансий, не менее (Целое число)");
                 break;
             }
         }
@@ -121,20 +115,20 @@ text-shadow: none;
     <div id="menubar">
         <div id="menu">
             <ul>
-                <li><a href="../index"><span>Главная</span></a></li>
-                <li><a href="../management"><span>Управление</span></a></li>
+                <li><a href="../../index"><span>Главная</span></a></li>
+                <li><a href="../../management"><span>Управление</span></a></li>
             </ul>
         </div>
     </div>
 
     <section class="container">
         <div class="bus">
-            <h1>Просмотр списка автобусов</h1>
+            <h1>Просмотр списка вакансий</h1>
             <%--@elvariable id="error" type="antlr"--%>
             <c:if test="${error != null}">
                 <div class = "error">${error}</div>
             </c:if>
-            <form method="get" action="searchbuses">
+            <form method="get" action="searchvacancies">
                 <input id = "searchLine" type="text" name = "line" value="" title="">
                 <%--@elvariable id="search" type="char"--%>
                 <c:if test="${search != null}">
@@ -145,32 +139,25 @@ text-shadow: none;
                         <p><input type="radio" onclick="Show()" name = "search" value="0" title="">Поиск по номеру</p>
                     </c:if>
                     <c:if test="${search == 1}">
-                        <p><input type="radio" onclick="Show()" checked name = "search" value="1" title="">Поиск по регистрационному номеру</p>
+                        <p><input type="radio" onclick="Show()" checked name = "search" value="1" title="">Поиск по количеству</p>
                     </c:if>
                     <c:if test="${search != 1}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по регистрационному номеру</p>
+                        <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по количеству</p>
                     </c:if>
                     <c:if test="${search == 2}">
-                        <p><input type="radio" onclick="Show()" checked name = "search" value="2" title="">Поиск по марке</p>
+                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="2" title="">Все вакансии</p>
                     </c:if>
                     <c:if test="${search != 2}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="2" title="">Поиск по марке</p>
+                        <p><input type="radio" onclick="Hidden()" name = "search" value="2" title="">Все вакансии</p>
                     </c:if>
-                    <c:if test="${search == 3}">
-                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3" title="">Все автобусы</p>
-                    </c:if>
-                    <c:if test="${search != 3}">
-                        <p><input type="radio" onclick="Hidden()" name = "search" value="3" title="">Все автобусы</p>
-                    </c:if>
+
                 </c:if>
                 <c:if test="${search == null}">
-                        <p><input type="radio" onclick="Show()" name = "search" value="0" title="">Поиск по номеру</p>
+                    <p><input type="radio" onclick="Show()" name = "search" value="0" title="">Поиск по номеру</p>
 
-                        <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по регистрационному номеру</p>
+                    <p><input type="radio" onclick="Show()" name = "search" value="1" title="">Поиск по количеству</p>
 
-                        <p><input type="radio" onclick="Show()" name = "search" value="2" title="">Поиск по марке</p>
-
-                        <p><input type="radio" onclick="Hidden()" checked name = "search" value="3" title="">Все автобусы</p>
+                    <p><input type="radio" checked onclick="Hidden()" name = "search" value="2" title="">Все вакансии</p>
                 </c:if>
                 <input type="submit" value="Поиск">
                 <div class="stopForm"></div>
@@ -179,27 +166,25 @@ text-shadow: none;
     </section>
 
 <form action="update" method="post">
-<%--@elvariable id="buses" type="antlr"--%>
-<c:if test="${buses != null || buses.size() == 0}">
+<%--@elvariable id="vacancies" type="antlr"--%>
+<c:if test="${vacancies != null && vacancies.size() > 0}">
     <table class="table_blur">
         <tr>
             <th>№</th>
-            <th>Номер</th>
-            <th>Марка</th>
-            <th>Модель</th>
-            <th>Состояние</th>
+            <th>Название</th>
+            <th>Ставка</th>
+            <th>Количество</th>
             <th>Описание</th>
-            <th>Выбрать</th>
+            <th>Действие</th>
         </tr>
-        <c:forEach var="bus" items="${buses}">
+        <c:forEach var="vacancy" items="${vacancies}">
         <tr>
-            <td>${bus.getId()}</td>
-            <td>${bus.getRegNumber()}</td>
-            <td>${bus.getMark()}</td>
-            <td>${bus.getModel()}</td>
-            <td>${bus.isState()}</td>
-            <td>${bus.getDescription()}</td>
-            <td><a href="updatebus?selected=${bus.getId()}">Выбрать</a></td>
+            <td>${vacancy.getId()}</td>
+            <td>${vacancy.getTitle()}</td>
+            <td>${vacancy.getSalary()}</td>
+            <td>${vacancy.getCount()}</td>
+            <td>${vacancy.getDescription()}</td>
+            <td><a href="updatevacancy?selected=${vacancy.getId()}">Выбрать</a></td>
         </tr>
         </c:forEach>
     </table>

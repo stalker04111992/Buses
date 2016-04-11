@@ -1,4 +1,4 @@
-package service;
+package service.buses;
 
 import entities.Bus;
 import javax.ejb.*;
@@ -29,7 +29,6 @@ public class BusDao {
         }
     }
 
-
     public ArrayList<Bus> findByMark (String mark) throws SQLException, NamingException {
         Query query = em.createNativeQuery("{call findByMark(?)}",
                 Bus.class)
@@ -43,18 +42,21 @@ public class BusDao {
                 .setParameter(1, number);
         return new ArrayList<Bus>(query.getResultList());
     }
+
     public ArrayList<Bus> findByRegNumber (String regNumber) throws SQLException, NamingException{
         Query query = em.createNativeQuery("{call findByRegNumber(?)}",
                 Bus.class)
                 .setParameter(1, regNumber);
         return new ArrayList<Bus>(query.getResultList());
     }
+
     public ArrayList<Bus> findByModel (String model) throws SQLException, NamingException{
         Query query = em.createNativeQuery("{call findByRegNumber(?)}",
                 Bus.class)
                 .setParameter(1, model);
         return new ArrayList<Bus>(query.getResultList());
     }
+
     public ArrayList<Bus> findAll()throws SQLException, NamingException {
         Query query = em.createNativeQuery("{call getAllBuses()}", Bus.class);
         return new ArrayList<Bus>(query.getResultList());
@@ -62,7 +64,6 @@ public class BusDao {
 
     public ArrayList<Integer> getNumbers(){
         Query query = em.createNativeQuery("{call getAllNumbers()}");
-
         return new ArrayList<Integer>(query.getResultList());
     }
 

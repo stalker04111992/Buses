@@ -1,8 +1,8 @@
-package servlets;
+package servlets.buses;
 
 import entities.Bus;
-import service.BusDao;
-import service.BusRegexMatches;
+import service.buses.BusDao;
+import service.buses.BusRegexMatches;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(value = "/management/addbus")
+@WebServlet(value = "/management/buses/addbus")
 public class AddBus extends HttpServlet{
     @EJB
     BusDao busDao;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class AddBus extends HttpServlet{
         }
         catch (SQLException exception){
             request.setAttribute("error", "Произошла ошибка при работе с базой данных");
-            request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
         }
         catch (NullPointerException exception){
             request.setAttribute("error", "Ошибка формата вводимых данных");
-            request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
         }
     }
 }
