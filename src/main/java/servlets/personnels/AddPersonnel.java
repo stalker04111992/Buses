@@ -1,4 +1,4 @@
-package servlets.vacancies;
+package servlets.personnels;
 
 import entities.Vacancy;
 import service.vacancies.VacancyDao;
@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(value = "/management/vacancies/addvacancy")
-public class AddVacancy extends HttpServlet{
+@WebServlet(value = "/management/personnels/addpersonnel")
+public class AddPersonnel extends HttpServlet{
     @EJB
     VacancyDao vacancyDao;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/addpersonnel.jsp").forward(request, response);
     }
 
     @Override

@@ -73,13 +73,6 @@ text-shadow: none;
 </style>
 
 <script>
-
-    $(document).ready(function(){
-        if($("#wrapper").height() < $(window).height()){
-            $("#wrapper").height($(window).height());
-        }
-    });
-
     $( document ).ready( function () {
         Hidden();
     })

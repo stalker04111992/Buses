@@ -1,7 +1,6 @@
 package servlets.vacancies;
 
 import service.vacancies.VacancyDao;
-
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +20,7 @@ public class DeleteVacancy extends HttpServlet{
         try{
             int index = new Integer(request.getParameter("number"));
             vacancyDao.delete(index);
-            response.sendRedirect("../../management");
+            response.sendRedirect("../management");
         }
         catch(SQLException exception){
             exception.printStackTrace();

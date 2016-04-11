@@ -1,12 +1,8 @@
 package servlets.vacancies;
 
-import entities.Bus;
 import entities.Vacancy;
-import service.buses.BusDao;
-import service.buses.BusRegexMatches;
 import service.vacancies.VacancyDao;
 import service.vacancies.VacancyRegexMatches;
-
 import javax.ejb.EJB;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
@@ -17,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(value = "/management/vacancies/updatevacancy")
+@WebServlet(value = "/management/buses/updatebus")
 public class UpdateVacancy extends HttpServlet {
     @EJB
     VacancyDao vacancyDao;

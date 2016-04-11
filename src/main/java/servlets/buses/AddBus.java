@@ -19,16 +19,13 @@ public class AddBus extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/addbus.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         try{
             Bus bus = BusRegexMatches.getBus(request);
-            if (bus == null){
-                throw new NullPointerException();
-            }
             busDao.saveBus(bus);
             response.sendRedirect("addbus");
         }
@@ -40,5 +37,6 @@ public class AddBus extends HttpServlet{
             request.setAttribute("error", "Ошибка формата вводимых данных");
             request.getRequestDispatcher("WEB-INF/pages/addvacancy.jsp").forward(request, response);
         }
+
     }
 }

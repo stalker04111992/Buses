@@ -42,17 +42,11 @@ public class SearchBuses extends HttpServlet {
                     if (BusRegexMatches.regNumberMatches(line)){
                         buses = busDao.findByRegNumber(line);
                     }
-                    else{
-                        throw new NamingException();
-                    }
                     break;
                 }
                 case 2:{
                     if(BusRegexMatches.markMatches(line)){
                         buses = busDao.findByMark(line);
-                    }
-                    else{
-                        throw new NamingException();
                     }
                     break;
                 }

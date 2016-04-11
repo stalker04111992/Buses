@@ -11,8 +11,8 @@
     <div id="menubar">
         <div id="menu">
             <ul>
-                <li><a href="../index"><span>Главная</span></a></li>
-                <li><a href="../management"><span>Управление</span></a></li>
+                <li id = "menu0"><a href="../../index"><span>Главная</span></a></li>
+                <li id = "menu1"><a href="../../management"><span>Управление</span></a></li>
             </ul>
         </div>
     </div>

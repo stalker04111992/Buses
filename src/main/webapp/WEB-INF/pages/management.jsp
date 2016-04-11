@@ -23,15 +23,15 @@
 
     <div id="managementPersonnel">
         <ul>
-            <li><a href="management/addpersonnel">Добавить сотрудника</a></li>
-            <li><a href="management/viewpersonnels">Просмотр списка сотрудников</a></li>
+            <li><a href="management/personnels/addpersonnel">Добавить сотрудника</a></li>
+            <li><a href="management/personnels/viewpersonnels">Работа с данными о сотрудниках</a></li>
         </ul>
     </div>
 
     <div id="managementVacancies">
         <ul>
             <li><a href="management/vacancies/addvacancy">Добавить вакансию</a></li>
-            <li><a href="management/vacancies/viewvacancies">Просмотр списка вакансий</a></li>
+            <li><a href="management/vacancies/viewvacancies">Работа с данными о вакансиях</a></li>
         </ul>
     </div>
 
