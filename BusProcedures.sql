@@ -119,12 +119,3 @@ as
 	select b.id from bus b order by b.id;
 --удалить процедуру
 drop procedure getAllNumbers
-
-go 
-
-create function getCountBuses()
-returns int as begin
-	declare @count int;
-	set @count = (select count(*) from bus);
-	return @count;
-end

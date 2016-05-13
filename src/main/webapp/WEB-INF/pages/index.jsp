@@ -4,8 +4,6 @@
 <head>
     <title>Система управления пассажирским транспортом</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
-
 </head>
 <body>
 

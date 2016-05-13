@@ -52,7 +52,7 @@
 
         <div class="bus">
             <h1>Редактировать</h1>
-            <div class = "error">${error}</div>
+            <div id = "error" class = "error"></div>
 
             <form method="post" action="edit">
                 <input type="hidden" id = "number" name = "number">
