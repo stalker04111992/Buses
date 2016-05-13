@@ -6,6 +6,35 @@ body {
 	padding: 0;
 }
 
+#managementPosts{
+	margin: 50px 0 0 10px;
+	float: left;
+}
+
+
+#managementPosts ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementPosts ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementPosts ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementPosts ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
 
 #managementVacancies{
 	margin: 50px 10px 0 0;
@@ -67,6 +96,38 @@ body {
 	color: darkgreen;
 	text-decoration: none;
 }
+
+
+#managementTable{
+	margin: 50px 10px 0 0;
+	float: right;
+}
+
+
+#managementTable ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementTable ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementTable ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementTable ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
 
 
 #managementBuses{
@@ -250,7 +311,7 @@ textarea {
 	width: 400px;
 }
 
-/* Search box */
+/* Searching box */
 #searchbox label, .hide {
 	display: none;
 }

@@ -33,5 +33,4 @@ public class RoleDao {
             return null;
         }
     }
-
 }

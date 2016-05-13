@@ -35,19 +35,6 @@ go
 --удалить процедуру
 drop procedure findByMark
 
------------------------------------------------------
-
-go
---выборка автобусов по модели
-create procedure findByModel
-@model varchar(30)
-as 
-	select * from bus b where b.mark = @model
-	
-go
---удалить процедуру
-drop procedure findByModel
-
 -------------------------------------------------------
 
 go
@@ -66,9 +53,9 @@ drop procedure deleteBus
 go
 --добавить автобус в базу
 create procedure saveBus
-@regNumber varchar(10), @mark varchar(30), @model varchar(20), @state bit, @description varchar(64)
+@regNumber varchar(10), @mark varchar(30), @model varchar(20), @state bit, @category varchar(2), @description varchar(64)
 as 
-	insert into bus (regNumber, mark, model, [state], [description]) VALUES (@regNumber,@mark,@model,@state,@description)
+	insert into bus (regNumber, mark, model, [state], bus.[category], [description]) VALUES (@regNumber,@mark,@model,@state, @category, @description)
 	return 0
 --удалить процедуру
 drop procedure saveBus
@@ -78,10 +65,16 @@ drop procedure saveBus
 go
 --изменить данные об автобусе
 create procedure updateBus
-@id int, @regNumber varchar(10), @mark varchar(30), @model varchar(20), @state bit, @description varchar(64)
+@id int, @regNumber varchar(10), @mark varchar(30), @model varchar(20), @state bit, @category varchar(2), @description varchar(64)
 as 
 	update bus
-	set regNumber = @regNumber, mark = @mark, model = @model, [state] = @state, [description] = @description where id = @id
+	set regNumber = @regNumber, mark = @mark, model = @model, [state] = @state, bus.[category] = @category, [description] = @description where id = @id
+	
+	if (@state = 0)
+	begin
+		delete work
+			 where busId = @id and not exists(select busId from work W join graph G on @id = W.busId and W.graphId = G.id and DATEDIFF(day, GETDATE(), G.[date]) < 0); 
+	end	
 	return 0
 --drop procedure
 drop procedure updateBus
@@ -95,6 +88,17 @@ as
 	select * from bus;
 --удалить процедуру
 drop procedure getAllBuses
+
+----------------------------------------------------------
+
+go
+--выбрать все автобусы
+create procedure findFreeToday
+@date Date, @shift int
+as
+	select B.* from bus B where not exists(select W.busId from work W join graph G on B.id = W.busId and W.graphId = G.id and G.[date] = @date and G.[shift] = @shift) and B.state = 1;
+--удалить процедуру
+drop procedure findFreeToday
 
 ----------------------------------------------------------
 
@@ -115,3 +119,12 @@ as
 	select b.id from bus b order by b.id;
 --удалить процедуру
 drop procedure getAllNumbers
+
+go 
+
+create function getCountBuses()
+returns int as begin
+	declare @count int;
+	set @count = (select count(*) from bus);
+	return @count;
+end

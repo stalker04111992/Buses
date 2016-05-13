@@ -121,26 +121,12 @@ a:hover {
 
 .bus {
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 10px auto 0 auto;
     padding: 10px;
     width: 455px;
     background: white;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.bus:before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    bottom: -8px;
-    left: -8px;
-    z-index: -1;
-    background: rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
-}
 .bus h1, .bus .error {
     line-height: 40px;
     font-size: 15px;
@@ -149,10 +135,6 @@ a:hover {
     text-align: center;
     text-shadow: 0 1px white;
     background: #f3f3f3;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-    -webkit-box-shadow: 0 1px whitesmoke;
-    box-shadow: 0 1px whitesmoke;
 }
 
 
@@ -191,8 +173,7 @@ input [type = radio]{
     margin: 10px 0;
 }
 
-
-.container .bus input[type = submit]{
+.bus input[type = submit]{
     float: right;
     width: 150px;
     margin: 10px 0 0 0;
