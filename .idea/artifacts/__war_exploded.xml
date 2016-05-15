@@ -7,6 +7,7 @@
           <element id="module-output" name="Автобусный парк" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.3" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
           <element id="library" level="project" name="Maven: javax.ejb:ejb-api:3.0" />

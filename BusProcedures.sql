@@ -119,3 +119,12 @@ as
 	select b.id from bus b order by b.id;
 --удалить процедуру
 drop procedure getAllNumbers
+
+go
+
+create procedure getCountsBuses @number int, @regNumber varchar(10)
+as
+begin	
+	(select count(*) from bus where regNumber = @regNumber and @number != id);
+end
+drop procedure getCountsBuses

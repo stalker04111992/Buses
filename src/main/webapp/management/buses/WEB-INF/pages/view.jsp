@@ -9,24 +9,47 @@
 <body>
 
 <script type="text/javascript">
-    var buses = '${buses}';             //информация об автобусах
-    var jsonData = JSON.parse(buses);   //парсинг json
-    var error = '${error}';             //сообщение об ошибке
 
-    $(document).ready(function () {
+   var search = function () {
 
-        if (error.length != 0){
-            $("#error").text(error);
-        }
+       var result = $("#result");
+       if (result != null){
+           result.remove();
+       }
+       $("#error").text("");
 
-        if(jsonData.length == 0){
-            $("#title").text("Автобусы не найдены");
-            return -1;
-        }
+       var param = $("#search").val();
 
+        $.ajax({
+
+            type: 'get',//тип запроса: get,post либо head
+            url: 'search',//url адрес файла обработчика
+            data: {'param': param},//параметры запроса
+            dataType: 'json',
+            success: function (data) {//возвращаемый результат от сервера
+                if(data.length == 0){
+                    $("#error").text("Не найдены автобусы");
+                    return -1;
+                }
+                print(data);
+            },
+            error: function (rsp) {
+                var error = JSON.parse(rsp.responseText);
+                exception(error);
+            }
+
+        });
+    }
+
+    var exception = function (msg) {
+        $("#error").text(msg);
+        alert(msg);
+    }
+
+    var print = function (jsonData) {
         $("#title").text("Список автобусов");
 
-        var table = $('<table></table>').addClass('table_blur');
+        var table = $('<table id = "result"></table>').addClass('table_blur');
         var row = $('<th>Номер</th><th>Марка</th><th>Модель</th><th>Рег. номер</th><th>Состояние</th>');
 
         table.append(row);
@@ -42,6 +65,14 @@
             table.append(row);
         }
         $('#someContainer').append(table);
+    }
+
+    $(document).ready(function () {
+
+        var error = '${error}';             //сообщение об ошибке
+        if (error.length != 0){
+            $("#error").text(error);
+        }
     });
 </script>
 
@@ -56,6 +87,7 @@
         </div>
     </div>
 
+    <input type="text" placeholder="Гаражный или рег. номер" id = "search"> <input type="button" value="Поиск" onclick="search()">
         <div class="bus">
             <div id = "title" class="error"></div>
             <div id = "error" class="error"></div>

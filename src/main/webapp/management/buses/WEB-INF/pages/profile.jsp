@@ -37,7 +37,7 @@
 
             $("#title").text("Данные об автобусе");
                 var element = $('#someContainer');
-                var bus = jsonData;
+                var bus = jsonData[0];
                 var state = bus.state ? "На ходу" : "На техобслуживании";
 
             element.append('<p>Гаражный номер: ' + bus['id'] + '</p>');
