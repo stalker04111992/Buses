@@ -3,17 +3,14 @@ package servlets.entity;
 import entities.Driver;
 import org.apache.commons.lang.math.NumberUtils;
 import service.DriverDao;
-import servlets.entity.SearchingPrint;
 
 import javax.ejb.EJB;
 import javax.naming.NamingException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(value = "/management/drivers/search")
-public class SearchingPrintingDriver extends SearchingPrint {
+public abstract class SearchingPrintingDriver extends SearchingPrint {
     @EJB
     DriverDao driverDao;
 

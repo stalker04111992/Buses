@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="SQL Server (Microsoft) - Straeto@127.0.0.1" uuid="75471321-c812-43b0-b505-cd84ea6c8d41">
+      <secret-storage>master_key</secret-storage>
+      <user-name>boss</user-name>
+    </data-source>
+  </component>
+</project>

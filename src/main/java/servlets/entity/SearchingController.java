@@ -1,7 +1,5 @@
 package servlets.entity;
 
-import servlets.ExceptionHandler;
-
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.ArrayList;
 
 @WebServlet
 public abstract class SearchingController extends PrintController {
@@ -22,7 +19,7 @@ public abstract class SearchingController extends PrintController {
         }
         catch (Exception exception){
             response.setStatus(500);
-            print(ExceptionHandler.handle(exception), response);
+            print(handle(exception), response);
         }
     }
 

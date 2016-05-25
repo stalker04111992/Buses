@@ -1,8 +1,8 @@
 package servlets.entity;
 
-import entities.Driver;
+import entities.Bus;
 import org.apache.commons.lang.math.NumberUtils;
-import service.DriverDao;
+import service.BusDao;
 
 import javax.ejb.EJB;
 import javax.naming.NamingException;
@@ -12,16 +12,16 @@ import java.util.ArrayList;
 
 public abstract class SearchingPrintingBuses extends SearchingPrint {
     @EJB
-    DriverDao driverDao;
+    BusDao busDao;
 
-    protected ArrayList<Driver> search(HttpServletRequest request) throws SQLException, NumberFormatException, NamingException{
+    protected ArrayList<Bus> search(HttpServletRequest request) throws SQLException, NumberFormatException, NamingException{
         String param = request.getParameter("param");
         if(NumberUtils.isNumber(param)){
-            return driverDao.findByNumber(new Integer(param));
+            return busDao.findByNumber(new Integer(param));
         }
         if (param.length() != 0){
-            return driverDao.findByLastName(param);
+            return busDao.findByRegNumber(param);
         }
-        return driverDao.findAll();
+        return busDao.findAll();
     }
 }

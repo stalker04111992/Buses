@@ -1,0 +1,377 @@
+body {
+	background-color: #f0f0f0;
+	color: #3a3a3a;
+	font: 76% Verdana,Tahoma,Arial,sans-serif;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#managementPosts{
+	margin: 50px 0 0 10px;
+	float: left;
+}
+
+
+#managementPosts ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementPosts ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementPosts ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementPosts ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementVacancies{
+	margin: 50px 10px 0 0;
+	float: right;
+}
+
+
+#managementVacancies ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementVacancies ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementVacancies ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementVacancies ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+
+#managementPersonnel{
+	margin: 50px 10px 0 0;
+	float: right;
+}
+
+
+#managementPersonnel ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementPersonnel ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementPersonnel ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementPersonnel ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+
+#managementTable{
+	margin: 50px 10px 0 0;
+	float: right;
+}
+
+
+#managementTable ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementTable ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementTable ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementTable ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+
+
+#managementBuses{
+	margin: 50px 0 0 10px;
+	float: left;
+}
+
+#managementBuses ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#managementBuses ul li{
+	height: 30px;
+	width: 350px;
+	font: 14px Verdana;
+	padding: 10px 0 0 10px;
+	background: linear-gradient(to bottom, ghostwhite, #f0f0f0);
+}
+
+#managementBuses ul li a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#managementBuses ul li a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+.stop{
+	clear: both;
+	margin: 0;
+}
+
+.container .bus input[type = submit]{
+	float: right;
+	margin-bottom: 10px;
+}
+
+#footer
+{
+	background: linear-gradient(to bottom, white, darkgrey);
+	height: 31px;
+	width: 800px;
+	position: absolute;
+	bottom: 0;
+}
+
+#menu {
+	width: 700px;
+	heigth: 30px;
+	float: left;
+}
+
+#menu ul {
+	padding: 0 15px;
+	margin: 0;
+	height: 20px;
+}
+
+#menu li {
+	display: inline;
+	padding: 0;
+}
+
+#menu a {
+	color: darkslategray;
+	font-size: 14px;
+	line-height: 35px;
+	padding: 3px;
+}
+
+#menu a:hover {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+#menu a.active {
+	color: darkgreen;
+	text-decoration: none;
+}
+
+
+
+#menubar
+{
+	background: linear-gradient(to bottom, darkgrey, white);
+	width: 800px;
+	height: 35px;
+}
+
+/* Main layout and header */
+#wrapper {
+	color: #303030;
+	background-color: #ffffff;
+	margin: 0 auto;
+	padding: 0;
+	width: 800px;
+	min-height: 100%;
+	height: 100%;
+	max-height: 1200px;
+}
+
+
+#clear {
+	clear: left;
+}
+
+#footer p {
+	margin: 0;
+	padding-top: 5px;
+	text-align: center;
+}
+
+#footer a {
+	color: darkgreen;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	text-decoration: none;
+	color: darkgreen;
+}
+
+/* Links and paragraphs */
+a {
+	background:inherit;
+	color:#166090;
+	text-decoration:none;
+	font-weight:700;
+}
+
+a:hover {
+	background:inherit;
+	color:#286ea0;
+	text-decoration:underline;
+}
+
+a img {
+	border:0;
+}
+
+p {
+	margin: 0 0 16px;
+}
+
+
+caption {
+	font-size: 1.5em;
+	font-weight: 400;
+	margin: 0;
+	padding: 6px 0 8px;
+	text-align: left;
+}
+
+form, fieldset, table {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+input[type = text],input[type = submit],input[type = email],textarea {
+	font-family: Tahoma, Arial, Times;
+	font-size:1em;
+	margin:0;
+	padding:4px;
+}
+
+label {
+	margin: 2px;
+}
+
+
+
+textarea {
+	width: 400px;
+}
+
+/* Searching box */
+#searchbox label, .hide {
+	display: none;
+}
+
+#searchbox {
+	margin: 6px 0 16px;
+	padding: 0;
+}
+
+#searchform {
+	background:#fff;
+	border:1px solid #ccc;
+	color:#505050;
+	font-size:0.9em;
+	padding:4px;
+	width:116px;
+}
+
+/* Various classes */
+.announce h2 {
+	margin:0 0 10px;
+	padding:0;
+}
+
+.textright {
+	margin:-10px 0 4px;
+	text-align:right;
+}
+
+.center {
+	text-align:center;
+}
+
+.small {
+	font-size:0.8em;
+}
+
+.large {
+	font-size:1.3em;
+}
+
+.highlighted {
+	background:#f0f0f0;
+	border:1px solid #b0b0b0;
+	color:#303030;
+	padding:3px;
+}
+
+.left {
+	float:left;
+	margin: 0 10px 5px 0;
+}
+
+.right {
+	float:right;
+	margin: 0 0 5px 10px;
+}
+
+img.center {
+	display: block;
+	text-align: center;
+	margin: 0 auto 8px;
+}

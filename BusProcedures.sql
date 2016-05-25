@@ -1,5 +1,5 @@
 --функции работы с автобусами
-use BusDepot;
+use Straeto;
 go;
 
 ---------------------------------------------------
@@ -72,8 +72,9 @@ as
 	
 	if (@state = 0)
 	begin
-		delete work
-			 where busId = @id and not exists(select busId from work W join graph G on @id = W.busId and W.graphId = G.id and DATEDIFF(day, GETDATE(), G.[date]) < 0); 
+		update graph
+		set busId = null 
+			 where busId = @id and not exists(select busId from graph G where @id = G.busId and DATEDIFF(day, GETDATE(), G.[date]) < 0); 
 	end	
 	return 0
 --drop procedure
@@ -96,7 +97,7 @@ go
 create procedure findFreeToday
 @date Date, @shift int
 as
-	select B.* from bus B where not exists(select W.busId from work W join graph G on B.id = W.busId and W.graphId = G.id and G.[date] = @date and G.[shift] = @shift) and B.state = 1;
+	select B.* from bus B where not exists(select G.busId from graph G where B.id = G.busId and G.[date] = @date and G.[shift] = @shift) and B.state = 1;
 --удалить процедуру
 drop procedure findFreeToday
 
@@ -128,3 +129,21 @@ begin
 	(select count(*) from bus where regNumber = @regNumber and @number != id);
 end
 drop procedure getCountsBuses
+
+create procedure setBus
+@graph int, @bus int
+as 
+	update graph
+	set busId = @bus where id = @graph
+	return 0
+--drop procedure
+drop procedure setBus
+
+create procedure setBusNull
+@graph int
+as 
+	update graph
+	set busId = null where id = @graph
+	return 0
+--drop procedure
+drop procedure setBusNull

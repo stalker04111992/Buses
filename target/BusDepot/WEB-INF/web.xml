@@ -1,0 +1,19 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
+    <url-pattern>*.config</url-pattern>
+    <url-pattern>*.hbm.xml</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>WEB-INF/pages/index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
