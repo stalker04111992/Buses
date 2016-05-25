@@ -1,0 +1,52 @@
+.table_blur {
+	font: 12px Tahoma;
+	background: rgb(244, 231, 243);
+	border-collapse: collapse;
+	text-align: left;
+	margin: 10px auto 30px auto;
+}
+.table_blur th {
+	border-top: 1px solid #423143;
+	border-bottom: 1px solid #423143;
+	box-shadow: inset 0 1px 0 #423143, inset 0 -1px 0 #423143;
+	background:#423143;
+	color: white;
+	padding: 10px 15px;
+	position: relative;
+}
+.table_blur th:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 25%;
+	height: 25%;
+	width: 100%;
+}
+.table_blur tr:nth-child(odd) {
+	background: #ecd7f1;
+}
+.table_blur th:first-child {
+	border-top: 1px solid #423143;
+	border-bottom: 1px solid #423143;
+	box-shadow: inset 0 1px 0 #423143, inset 0 -1px 0 #423143;
+}
+.table_blur th:last-child {
+	border-top: 1px solid #423143;
+	border-bottom: 1px solid #423143;
+	box-shadow: inset 0 1px 0 #423143, inset 0 -1px 0 #423143;
+}
+.table_blur td {
+	padding: 10px 15px;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+.table_blur td {
+	padding: 10px 15px;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.spec{
+	color:#423143;
+}
